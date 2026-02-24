@@ -1,0 +1,14 @@
+{
+  "contents": [
+    {
+      "id": "vscode-extension-mine-dev-tool",
+      "title": "MineDevTool",
+      "description": "Minecraftデータパック、リソースパック開発を効率化するVSCode拡張機能です。",
+      "category": "extension",
+      "version": "version ALL",
+      "downloadUrl": "https://marketplace.visualstudio.com/items?itemName=bernet.MineDevTools",
+      "detail": "MineDevTools\nMinecraft 向けの設定や YAML、リソースパック操作などをまとめた VS Code 拡張機能です。\n\nできること\n設定ファイルの生成\nMinecraft ディレクトリ内容のプレビューと書き込み\nリソースパックの zip 圧縮\n翻訳、結合、エンコード/デコード、コンバータ機能\nコマンド一覧\n設定ファイル作成 (extension.createSetting)\ncreate_resources (extension.create_resources)\nShow mc dir Preview (extension.showMcDirPreview)\nWrite yaml (extension.writeMcDir)\nzipfile (extension.compressResourcePack)\ntranslate (extension.translate)\ncombine (extension.combine)\nencoder (extension.encoder)\ndecoder (extension.decoder)\nconverter (extension.converter)",
+      "thumbnail": "/uploads/minedevtool.png"
+    }
+  ]
+}

@@ -1,0 +1,118 @@
+.social-page .social-main {
+  padding-top: 48px;
+  padding-bottom: 3rem;
+}
+
+.social-main__inner {
+  max-width: 64rem;
+  margin: 0 auto;
+}
+
+.social-back-link-wrap {
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+}
+
+.social-profile {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.social-profile__image {
+  width: 92px;
+  height: 92px;
+  border-radius: 9999px;
+  object-fit: cover;
+  border: 1px solid var(--color-border);
+  background: #f3f4f6;
+  flex-shrink: 0;
+}
+
+.social-profile__title {
+  margin: 0;
+  font-family: "Lato", "Helvetica Neue", Arial, sans-serif;
+  font-size: clamp(1.35rem, 3.4vw, 2.05rem);
+  line-height: 1.2;
+  color: var(--color-text);
+  font-weight: 900;
+  letter-spacing: 0.01em;
+}
+
+.social-section {
+  margin-bottom: 3rem;
+}
+
+.social-title {
+  margin: 0 0 1rem;
+  font-family: "Playfair Display", serif;
+  color: var(--color-secondary);
+  font-size: 2rem;
+}
+
+.x-embed-wrap {
+  border: 1px solid var(--color-border);
+  border-radius: 0.75rem;
+  background: var(--color-white);
+  padding: 0.75rem;
+}
+
+.youtube-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 768px) {
+  .youtube-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1100px) {
+  .youtube-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.youtube-card {
+  border: 1px solid var(--color-border);
+  border-radius: 0.75rem;
+  overflow: hidden;
+  background: var(--color-white);
+  display: block;
+}
+
+.youtube-card:hover {
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+}
+
+.youtube-card__thumb {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  display: block;
+}
+
+.youtube-card__body {
+  padding: 0.75rem;
+}
+
+.youtube-card__body h3 {
+  margin: 0 0 0.25rem;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  color: var(--color-text);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.youtube-card__body p {
+  margin: 0;
+  font-size: 0.8rem;
+  color: var(--color-muted);
+}

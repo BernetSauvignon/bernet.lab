@@ -1,0 +1,18 @@
+{
+  "releases": [
+    {
+      "contentId": "vscode-extension-mine-dev-tool",
+      "id": "vscode-extension-mine-dev-tool_v1",
+      "date": "2026-02-23",
+      "title": "正式リリース",
+      "summary": "create_resources (リソースパックを作る際に最初に必要なファイルを一括で生成するコマンド)を実装し、正式リリースしました。"
+    },
+    {
+      "id": "release-site-2026-02-23",
+      "date": "2026-02-23",
+      "title": "サイト公開",
+      "summary": "コンテンツ一覧を統合し、詳細ページでヒントとリリースノートを確認できるようにしました。",
+      "link": ""
+    }
+  ]
+}

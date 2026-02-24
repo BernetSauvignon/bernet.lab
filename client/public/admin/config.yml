@@ -1,0 +1,135 @@
+backend:
+  name: github
+  repo: BernetSauvignon/bernet.lab
+  branch: develop
+  # GitHub Pages本番で管理画面ログインを使う場合は有効化
+  # base_url: https://<your-oauth-gateway-domain>
+  # auth_endpoint: auth
+
+local_backend: true
+
+media_folder: "client/public/uploads"
+public_folder: "/uploads"
+
+collections:
+  - name: "site"
+    label: "サイト管理"
+    files:
+      - label: "サイト基本情報"
+        name: "site_settings"
+        file: "client/public/content/site.json"
+        format: "json"
+        fields:
+          - label: "ブランド"
+            name: "brand"
+            widget: "object"
+            fields:
+              - { label: "サイト名", name: "name", widget: "string" }
+              - { label: "サブタイトル", name: "subtitle", widget: "string" }
+              - { label: "ヘッダーロゴ画像", name: "headerLogo", widget: "image", allow_multiple: false, choose_url: false, required: false }
+
+          - label: "ヒーロー"
+            name: "hero"
+            widget: "object"
+            fields:
+              - { label: "タイトル", name: "title", widget: "string" }
+              - { label: "説明", name: "description", widget: "text" }
+              - { label: "ヒーロー画像", name: "image", widget: "image", allow_multiple: false, choose_url: false }
+
+          - label: "SNS詳細プロフィール"
+            name: "socialProfile"
+            widget: "object"
+            fields:
+              - { label: "表示テキスト", name: "title", widget: "string" }
+              - { label: "プロフィール画像", name: "image", widget: "image", allow_multiple: false, choose_url: false, required: false }
+
+          - label: "SNS"
+            name: "socials"
+            widget: "list"
+            summary: "{{fields.platform}}"
+            fields:
+              - label: "プラットフォーム"
+                name: "platform"
+                widget: "select"
+                options: ["x", "youtube", "github"]
+              - { label: "表示名", name: "title", widget: "string" }
+              - { label: "ハンドル", name: "handle", widget: "string" }
+              - { label: "URL", name: "url", widget: "string" }
+              - { label: "説明", name: "description", widget: "text" }
+
+          - label: "フッター"
+            name: "footer"
+            widget: "object"
+            fields:
+              - { label: "コピーライト", name: "copyright", widget: "string" }
+
+      - label: "コンテンツ一覧"
+        name: "contents"
+        file: "client/public/content/contents.json"
+        format: "json"
+        fields:
+          - label: "コンテンツ一覧"
+            name: "contents"
+            widget: "list"
+            summary: "{{fields.title}} [{{fields.category}}]"
+            fields:
+              - { label: "ID（自動採番）", name: "id", widget: "uuid" }
+              - { label: "タイトル", name: "title", widget: "string" }
+              - { label: "説明", name: "description", widget: "text" }
+              - label: "カテゴリ"
+                name: "category"
+                widget: "select"
+                options: ["map", "resource_pack", "extension"]
+              - { label: "Minecraft バージョン", name: "version", widget: "string", required: false }
+              - { label: "サムネイル画像", name: "thumbnail", widget: "image", allow_multiple: false, choose_url: false }
+              - { label: "ダウンロードURL", name: "downloadUrl", widget: "string", required: false }
+              - { label: "詳細本文", name: "detail", widget: "text", required: false }
+
+      - label: "ヒント一覧"
+        name: "hints"
+        file: "client/public/content/hints.json"
+        format: "json"
+        fields:
+          - label: "ヒント一覧"
+            name: "hints"
+            widget: "list"
+            summary: "{{fields.title}}"
+            fields:
+              - { label: "ID（自動採番）", name: "id", widget: "uuid" }
+              - label: "対象コンテンツ（任意）"
+                name: "contentId"
+                widget: "relation"
+                collection: "site"
+                file: "contents"
+                search_fields: ["contents.*.title"]
+                display_fields: ["contents.*.title"]
+                value_field: "contents.*.id"
+                required: false
+              - { label: "タイトル", name: "title", widget: "string" }
+              - { label: "本文", name: "body", widget: "text" }
+              - { label: "リンク", name: "link", widget: "string", required: false }
+
+      - label: "リリース情報一覧"
+        name: "releases"
+        file: "client/public/content/releases.json"
+        format: "json"
+        fields:
+          - label: "リリース情報一覧"
+            name: "releases"
+            widget: "list"
+            summary: "{{fields.date}} - {{fields.title}}"
+            fields:
+              - { label: "ID（自動採番）", name: "id", widget: "uuid" }
+              - label: "対象コンテンツ（任意）"
+                name: "contentId"
+                widget: "relation"
+                collection: "site"
+                file: "contents"
+                search_fields: ["contents.*.title"]
+                display_fields: ["contents.*.title"]
+                value_field: "contents.*.id"
+                required: false
+              - { label: "日付", name: "date", widget: "datetime", format: "YYYY-MM-DD", time_format: false, picker_utc: false }
+              - { label: "タイトル", name: "title", widget: "string" }
+              - { label: "概要", name: "summary", widget: "text" }
+              - { label: "リンク", name: "link", widget: "string", required: false }

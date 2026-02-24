@@ -1,0 +1,33 @@
+{
+  "brand": {
+    "name": "Bernet Lab",
+    "subtitle": "Minecraft Creative Laboratory",
+    "headerLogo": "/uploads/bernet_icon.png"
+  },
+  "hero": {
+    "title": "Minecraft で一緒に遊ぶ仲間がいないので 遊んでもらうことにしました",
+    "description": "配布マップ、リソースパック、VSCode拡張機能など、Minecraft開発者向けのツールとコンテンツを集約したサイト。",
+    "image": "/uploads/hero.png"
+  },
+  "socialProfile": {
+    "title": "Bernet Lab -Minecraft Creative Laboratory-",
+    "image": "/uploads/bernet_icon.png"
+  },
+  "socials": [
+    {
+      "platform": "x",
+      "handle": "@bernet_lab",
+      "url": "https://x.com/@bernet_lab",
+      "description": "最新情報や開発進捗を配信中。"
+    },
+    {
+      "platform": "youtube",
+      "handle": "Bernet Lab -Minecraft Creative Laboratory-",
+      "url": "https://www.youtube.com/channel/UCleqQmed9Yj3YiyFmekBF_w",
+      "description": "配布物紹介や開発解説を公開中。"
+    }
+  ],
+  "footer": {
+    "copyright": "© 2026 Bernet Lab"
+  }
+}
