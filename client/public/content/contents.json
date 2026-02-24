@@ -1,8 +1,8 @@
 {
   "contents": [
     {
-      "id": "vscode-extension-mine-dev-tool",
-      "title": "MineDevTool",
+      "id": "vscode-extension-mine-dev-tools",
+      "title": "MineDevTools",
       "description": "Minecraftデータパック、リソースパック開発を効率化するVSCode拡張機能です。",
       "category": "extension",
       "version": "version ALL",
