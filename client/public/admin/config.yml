@@ -2,6 +2,12 @@ backend:
   name: github
   repo: BernetSauvignon/bernet.lab
   branch: develop
+  commit_messages:
+    create: "cms: create {{collection}} {{slug}}"
+    update: "cms: update {{collection}} {{slug}}"
+    delete: "cms: delete {{collection}} {{slug}}"
+    uploadMedia: "cms: upload {{path}}"
+    deleteMedia: "cms: delete {{path}}"
   # GitHub Pages本番で管理画面ログインを使う場合は有効化
   # base_url: https://<your-oauth-gateway-domain>
   # auth_endpoint: auth
@@ -52,7 +58,6 @@ collections:
                 name: "platform"
                 widget: "select"
                 options: ["x", "youtube", "github"]
-              - { label: "表示名", name: "title", widget: "string" }
               - { label: "ハンドル", name: "handle", widget: "string" }
               - { label: "URL", name: "url", widget: "string" }
               - { label: "説明", name: "description", widget: "text" }
